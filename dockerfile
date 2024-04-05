@@ -11,7 +11,7 @@ COPY . .
 RUN apt-get update && \
     apt-get install -y libpng-dev && \
     docker-php-ext-install pdo pdo_mysql gd
-
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 # Expose the port Apache listens on
 EXPOSE 80
 
